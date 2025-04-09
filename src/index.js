@@ -12,7 +12,7 @@ app.use("/api", animalRoutes);
 app.use(express.json());
 //Conexión a la base de datos
 mongoose
-    .connect(process.env.MONDONGO_URI)
+    .connect(process.env.MONGODB_URI)
     .then(() => console.log("Conexión exitosa"))
     .catch((error) => console.log(error));
 //Conexión al puerto

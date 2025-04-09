@@ -10,3 +10,18 @@ router.post("/animals", (req, res) => {
         .catch((error) => res.json({ message: error }));
 });
 module.exports = router;
+//Consultar todos los animales
+router.get("/animals", (req, res) => {
+    animalSchema.find()
+        .then((data) => res.json(data))
+        .catch((error) => res.json({ message: error }));
+});
+module.exports = router;
+//Consultar un animal por su id
+router.get("/animals/:id", (req, res) => {
+    const { id } = req.params;
+    animalSchema
+        .findById(id)
+        .then((data) => res.json(data))
+        .catch((error) => res.json({ message: error }));
+});
