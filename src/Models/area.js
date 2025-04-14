@@ -2,11 +2,11 @@ const mongoose = require("mongoose"); // importaando el componente mongoose
 
 const areaSchema = mongoose.Schema({
     nombre: {
-        type:String,
+        type: String,
         required: true
     },
     descripcion: {
-        type:String,
+        type: String,
         required: true
     },
     animales:[{type: mongoose.Schema.Types.ObjectId, ref:'Animal'}]
